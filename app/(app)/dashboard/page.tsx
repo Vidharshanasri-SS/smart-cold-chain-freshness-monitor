@@ -53,9 +53,14 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const loadSensor = async () => {
-      const res = await fetch("/api/sensor")
-      const data = await res.json()
-      setSensor(data)
+      try {
+        const res = await fetch("/api/sensor")
+        if (!res.ok) throw new Error(`Sensor API returned ${res.status}`)
+        const data = await res.json()
+        setSensor(data)
+      } catch (err) {
+        console.error("Sensor fetch failed:", err)
+      }
     }
 
     loadSensor()
