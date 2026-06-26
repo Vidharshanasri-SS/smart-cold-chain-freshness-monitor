@@ -63,7 +63,7 @@ export default function DashboardPage() {
 
     loadSensor();
 
-    const interval = setInterval(loadSensor, 3000);
+    const interval = setInterval(loadSensor, 3000); 
 
     return () => clearInterval(interval);
   }, []);
