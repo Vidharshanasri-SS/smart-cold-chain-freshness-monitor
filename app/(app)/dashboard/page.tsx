@@ -40,9 +40,84 @@ const quickLinks = [
 ]
 
 export default function DashboardPage() {
+  "use client"
+
+import { useEffect, useState } from "react";
+
+export default function DashboardPage() {
+
+  const [sensor, setSensor] = useState({
+    temperature: 0,
+    humidity: 0,
+    mq135: 0,
+    sgp40: 0,
+    foodStatus: "Loading...",
+  });
+
+  useEffect(() => {
+    const loadSensor = async () => {
+      const res = await fetch("/api/sensor");
+      const data = await res.json();
+      setSensor(data);
+    };
+
+    loadSensor();
+
+    const interval = setInterval(loadSensor, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <>
       <PageHeader
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
+
+  <Card>
+    <CardHeader>
+      <CardTitle>🌡 Temperature</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p className="text-2xl font-bold">{sensor.temperature} °C</p>
+    </CardContent>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>💧 Humidity</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p className="text-2xl font-bold">{sensor.humidity} %</p>
+    </CardContent>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>🟢 MQ135</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p className="text-2xl font-bold">{sensor.mq135}</p>
+    </CardContent>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>🌫 SGP40</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p className="text-2xl font-bold">{sensor.sgp40}</p>
+    </CardContent>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>🍎 Food Status</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p className="text-2xl font-bold">{sensor.foodStatus}</p>
+    </CardContent>
+  </Card>
+
+</div>
         title="Dashboard"
         description="System overview across your fleet, warehouses, and sensor network."
       />
