@@ -11,7 +11,7 @@ let sensorData = {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-
+ 
     sensorData = {
       temperature: body.temperature,
       humidity: body.humidity,
