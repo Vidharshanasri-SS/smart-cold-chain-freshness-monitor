@@ -92,9 +92,9 @@ export type Activity = {
   type: "info" | "warning" | "success" | "critical"
 }
 
-export const trucks: Truck[] 
+export const trucks: Truck[] =[]
 
-export const warehouses: Warehouse[] 
+export const warehouses: Warehouse[]=[] 
 
 export const sensorNodes = [
   {
