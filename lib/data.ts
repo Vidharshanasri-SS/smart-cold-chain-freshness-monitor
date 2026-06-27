@@ -149,12 +149,11 @@ export const activities: Activity[] = [
 ]
 
 export const dashboardStats = [
-  { label: "Active Nodes", value: "210", sub: "of 224 deployed", trend: "+3 today" },
-  { label: "Active Trucks", value: "18", sub: "4 idle · 2 service", trend: "stable" },
-  { label: "Warehouses Online", value: "4", sub: "all regions reporting", trend: "100%" },
+  { label: "Active Nodes", value: "2", sub: "of 1 deployed", trend: "+3 today" },
+  { label: "Active Trucks", value: "1", sub: "1 idle · 0 service", trend: "stable" },
+  { label: "Warehouses Online", value: "0", sub: "nil", trend: "nil" },
   { label: "Avg Shelf Life", value: "3.8 d", sub: "across all batches", trend: "-0.4 d" },
-  { label: "Produce Protected", value: "1,240t", sub: "this month", trend: "+8.2%" },
-  { label: "Active Alerts", value: "4", sub: "2 critical · 2 warning", trend: "needs review" },
+  { label: "Active Alerts", value: "0", sub: "0 critical · 0 warning", trend: "no review" },
 ]
 
 // chart helpers
