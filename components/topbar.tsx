@@ -156,7 +156,7 @@ export function TopBar() {
               DR
             </span>
             <span className="hidden text-left leading-tight sm:block">
-              <span className="block text-sm font-medium">Dana Reyes</span>
+              <span className="block text-sm font-medium">Vidharshana sri</span>
               <span className="block text-xs text-muted-foreground">Admin</span>
             </span>
             <ChevronDown className="hidden h-4 w-4 text-muted-foreground sm:block" />
