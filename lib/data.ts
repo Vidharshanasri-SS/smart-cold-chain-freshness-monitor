@@ -165,7 +165,7 @@ export function trendSeries(base: number, points = 12, variance = 1.5) {
 }
 
 export const users = [
-  { id: "U-01", name: "Dana Reyes", email: "dana@foodfresh.io", role: "Admin", status: "Active" },
+  { id: "U-01", name: "Vidharshana sri", email: "vidharshanasri@foodfresh.io", role: "Admin", status: "Active" },
   { id: "U-02", name: "Marcus Bell", email: "marcus@foodfresh.io", role: "Fleet Manager", status: "Active" },
   { id: "U-03", name: "Priya Anand", email: "priya@foodfresh.io", role: "Warehouse Manager", status: "Active" },
   { id: "U-04", name: "Tom Walsh", email: "tom@foodfresh.io", role: "Viewer", status: "Invited" },
